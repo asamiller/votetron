@@ -1,0 +1,20 @@
+{
+  "name": "Votetron",
+  "version": "0.0.1",
+  "description": "Orchestrate voting app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Asa Miller",
+  "license": "",
+  "dependencies": {
+    "express": "^3.5.0",
+    "passport": "^0.2.0",
+    "orchestrate": "0.0.6",
+    "passport-github": "^0.1.5",
+    "q": "^1.0.0",
+    "express3-handlebars": "^0.5.0",
+    "moment": "^2.5.1"
+  }
+}

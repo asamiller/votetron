@@ -1,0 +1,57 @@
+<div class="container-fluid">
+	
+	<div class="col-md-8">
+		<div class="page-header">
+			<h1>
+				{{project.name}} 
+				<small class="pull-right">
+					<span class="label label-info">
+						<span class="glyphicon glyphicon-star"></span>
+						{{project.votes}}
+					</span> 
+					{{pluralize project.votes 'vote' 'votes'}}
+				</small>
+			</h1>
+		</div>
+	
+		<div class="row">
+			<div class="col-md-4">
+				<h6>Created by: {{project.user}}<h6>
+			</div>
+			
+			<div class="col-md-4">
+				<h6>Created: {{dateFormat project.dateCreated "MMMM Do [at] h:mm a"}}</h6>
+			</div>
+			
+			<div class="col-md-4 text-right">
+				{{#if user}}
+					<a href="/project/{{key}}/vote" class="btn btn-primary btn-block">
+						<span class="glyphicon glyphicon-star"></span> 
+						Vote For Project
+					</a>
+						
+				{{else}}
+					<a href="/signin" class="btn btn-primary btn-block">
+						<span class="glyphicon glyphicon-user"></span> 
+						Sign in to vote
+					</a>
+				
+				{{/if}}
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-xs-12 space">
+				<p class="lead">{{project.description}}</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-md-4">
+		<img class="project-image" src="{{project.image}}">
+	</div>
+	
+		
+
+</div>
+

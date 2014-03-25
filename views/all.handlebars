@@ -1,0 +1,68 @@
+{{#if user}}
+	<div class="jumbotron">
+		<h1>Enter the challenge</h1>
+		<p>We want to see your project! Upload your project below to enter our challenge.</p>
+		<p>
+			<a href="/myprojects/create" class="btn btn-primary btn-lg" role="button">
+				<span class="glyphicon glyphicon-ok"></span> 
+				Create project
+			</a>
+		</p>
+	</div>
+	
+{{else}}
+	<div class="jumbotron">
+		<h1>Orchestrate Code Challenge</h1>
+		<p>We've got a man down, Dude. You want a toe? I can get you a toe, believe me. There are ways, Dude. You don't wanna know about it, believe me.</p>
+		<p>
+			<a href="/signin" class="btn btn-primary btn-lg" role="button">
+				<span class="glyphicon glyphicon-user"></span> 
+				Sign in with GitHub
+			</a>
+		</p>
+	</div>
+	
+{{/if}}
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>Votes</th>
+			<th>Project</th>
+			<th>Username</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each projects}}
+			<tr>
+				<td>
+					<h4>
+						<span class="label label-info">
+							<span class="glyphicon glyphicon-star"></span>
+							{{this.value.votes}}
+						</span>
+						
+						{{#if ../user}}
+						<a href="/project/{{this.path.key}}/vote" class="btn btn-default btn-xs space-left">
+							<span class="glyphicon glyphicon-chevron-up"></span>
+						</a>
+						{{/if}}	
+					</h4>
+				</td>
+				
+				<td>
+					<h4>
+						<a href="/project/{{this.path.key}}">{{this.value.name}}</a>
+					</h4>
+				</td>
+				
+				<td>
+					<h4>
+						{{this.value.user}}
+					</h4>	
+				</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+	 

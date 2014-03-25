@@ -1,0 +1,31 @@
+<div class="container-fluid">
+	<div class="page-header">
+		<h1>My Projects</h1>
+	</div>
+	
+	{{#each projects}}
+		<div class="col-md-4">
+			<div class="thumbnail">
+				<img class="project-image" src="{{this.value.image}}">
+				
+				<div class="caption">
+					
+					<div class="media-body">
+						<h2 class="media-heading">{{this.value.name}}</h2>
+					</div>
+					
+					<div class="votes">
+						<h4 class="media-heading">Votes: <span class="label label-info">{{this.value.votes}}</span></h4>
+					</div>
+					
+					<div class="description">
+						<p>{{this.value.description}}</p>
+					</div>
+					
+					<p><a href="/project/{{this.path.key}}" class="btn btn-primary" role="button">View project</a></p>
+					
+				</div>	
+			</div>
+		</div>
+	{{/each}}
+</div>
